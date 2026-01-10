@@ -1,0 +1,330 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "170410171985c91777": {
+      "type": "apps",
+      "blocks": {
+        "shop_quiz_product_recommender_inline_quiz_A8Bjqx": {
+          "type": "shopify://apps/revenuehunt-quizzes/blocks/inline-quiz/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
+          "disabled": true,
+          "settings": {
+            "quiz_id": "nmH8Dy",
+            "quiz_height": 600,
+            "quiz_autoscroll": true,
+            "quiz_fixed_height": true
+          }
+        }
+      },
+      "block_order": [
+        "shop_quiz_product_recommender_inline_quiz_A8Bjqx"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "image_banner_gYGxN8": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_hdxrdA": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Unique Fingerprint Ring",
+            "heading_size": "h1"
+          }
+        },
+        "text_D4LPtE": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Craft a one-of-a-kind diamond ring engraved with your unique fingerprint",
+            "text_style": "body"
+          }
+        },
+        "buttons_HnKPDC": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Book An Appointment",
+            "button_link_1": "shopify://pages/fingerprint-ring-appointment-pune",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_hdxrdA",
+        "text_D4LPtE",
+        "buttons_HnKPDC"
+      ],
+      "custom_css": [
+        ".slider-button {display: none;}",
+        " {display: block;}",
+        "@media only screen and (min-width: 768px) {{display: none; }}"
+      ],
+      "settings": {
+        "image_overlay_opacity": 100,
+        "banner_link": "",
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-e3263781-8803-4c22-ade9-7613af5646eb",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_banner_qtp9TG": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_HdE8DD": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Unique Fingerprint Ring",
+            "heading_size": "h1"
+          }
+        },
+        "text_CUMbbq": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Craft a one-of-a-kind diamond ring engraved with your unique fingerprint",
+            "text_style": "body"
+          }
+        },
+        "buttons_E6CgAE": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Book An Appointment",
+            "button_link_1": "shopify://pages/fingerprint-ring-appointment-pune",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_HdE8DD",
+        "text_CUMbbq",
+        "buttons_E6CgAE"
+      ],
+      "custom_css": [
+        ".slider-button {display: none;}",
+        " {display: block;}",
+        "@media only screen and (min-width: 768px) {{display: none; }}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Design_bank_1.png",
+        "image_overlay_opacity": 100,
+        "banner_link": "",
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-e3263781-8803-4c22-ade9-7613af5646eb",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "image_banner_xfJaTW": {
+      "type": "image-banner",
+      "custom_css": [
+        "{display: block;}",
+        "@media only screen and (max-width: 767px) {{display: none; }}",
+        ".slider-button {display: none;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Design_Bank_2.png",
+        "image_overlay_opacity": 0,
+        "banner_link": "shopify://pages/fingerprint-ring-appointment-pune",
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "fingerprint_steps_NGJUTc": {
+      "type": "Fingerprint-steps",
+      "custom_css": [
+        ".collection__content {font-family: \"oregon-ldo-medium\", sans-serif !important; font-size: 18px !important; color: #333333 !important;}",
+        "h3 {font-size: 30px; color: #333333; font-family: \"oregon-ldo-medium\", sans-serif; margin-bottom: 20px; /* Adjust this value to control the space */}",
+        ".landing-collection-slider > h3 {font-family: oregon-ldo-medium; font-size: 56px; text-align: center; margin-bottom: 0; text-transform: capitalize;"
+      ],
+      "name": "Fingerprint steps",
+      "settings": {
+        "title": "How It Works ?",
+        "subtitle": "",
+        "collection_list": [
+          "step-1",
+          "step-2",
+          "step-3",
+          "step-4"
+        ]
+      }
+    },
+    "custom_liquid_a6eHpj": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- Fixed CTA -->\n<div class=\"ri-cta-bar\">\n  <a href=\"#\" id=\"ri-open-btn\" class=\"ri-cta-btn\">Submit Design</a>\n</div>\n\n<!-- Popup Modal -->\n<div id=\"ri-modal\" class=\"ri-overlay\" aria-hidden=\"true\">\n  <div class=\"ri-modal-box\" role=\"dialog\" aria-modal=\"true\" aria-label=\"Submit Your Design Form\">\n    <button type=\"button\" class=\"ri-close\" aria-label=\"Close\">&times;</button>\n\n    <!-- Zoho Form Embed -->\n    <iframe\n      id=\"ri-zoho-frame\"\n      src=\"https://forms.zohopublic.in/appointmentsring1/form/UploadYourDesign/formperma/bnp-bCq7HuwZHrRrn5mVWlfuMFNGJMCu0XXmFyvTcdg\"\n      width=\"100%\"\n      height=\"640\"\n      frameborder=\"0\"\n      loading=\"lazy\"\n      style=\"border:none; display:block;\">\n    </iframe>\n\n    <noscript>\n      <p>JavaScript is required to load the form inline.\n        <a href=\"https://forms.zohopublic.in/appointmentsring1/form/UploadYourDesign/formperma/bnp-bCq7HuwZHrRrn5mVWlfuMFNGJMCu0XXmFyvTcdg\" target=\"_blank\" rel=\"noopener\">Open the form</a>.\n      </p>\n    </noscript>\n  </div>\n</div>\n\n<style>\n  /* Fixed Button */\n  .ri-cta-bar {\n    position: fixed; left: 0; right: 0; bottom: 0;\n    z-index: 9999; background-color:#EDEDED;\n    display:flex; justify-content:center; align-items:center;\n    padding:10px 0;\n  }\n  .ri-cta-btn {\n    width: 48%; /* can be fixed if needed */\n    height: 50px; /* can be fixed if needed */\n    padding: 10px 20px;\n    background: #000;\n    color: #fff;\n    text-decoration: none;\n    font-size: 20px;\n    font-family: 'oregon-ldo-medium', sans-serif;\n    border-radius: 25px; /* from your style */\n    border: none;\n    outline: none;\n    text-align: center;\n    box-sizing: border-box;\n  }\n\n  /* Modal */\n  .ri-overlay {\n    display: none;\n    position: fixed;\n    z-index: 9999;\n    left: 0; top: 0;\n    width: 100%; height: 100%;\n    background-color: rgba(0,0,0,0.6);\n  }\n  .ri-modal-box {\n    background: #fff;\n    margin: 5% auto;\n    padding: 0;\n    border-radius: 10px; /* from your style */\n    width: 90%;\n    max-width: 750px;\n    box-shadow: 0 5px 20px rgba(0,0,0,0.3);\n    overflow: hidden;\n    position: relative;\n  }\n  .ri-close {\n    float: right;\n    font-size: 28px;\n    font-weight: bold;\n    color: #333;\n    padding: 10px 15px;\n    cursor: pointer;\n    background: #f4f4f4;\n    border: none;\n  }\n  .ri-close:hover {\n    background: #ddd;\n  }\n\n  /* Fullscreen on mobile */\n  @media (max-width: 749px) {\n    .ri-modal-box { margin:0; width:100%; height:100%; border-radius:0; }\n    #ri-zoho-frame { height: calc(100vh - 48px); } /* space for close button */\n  }\n</style>\n\n<script>\n  (function() {\n    const riModal = document.getElementById('ri-modal');\n    const riOpenBtn = document.getElementById('ri-open-btn');\n    const riCloseBtn = document.querySelector('.ri-close');\n\n    function riOpen(e) {\n      if (e) e.preventDefault();\n      riModal.style.display = 'block';\n      document.documentElement.style.overflow = 'hidden';\n    }\n    function riClose() {\n      riModal.style.display = 'none';\n      document.documentElement.style.overflow = '';\n    }\n\n    riOpenBtn.addEventListener('click', riOpen);\n    riCloseBtn.addEventListener('click', riClose);\n\n    window.addEventListener('click', function(e) {\n      if (e.target === riModal) riClose();\n    });\n\n    window.addEventListener('keydown', function(e) {\n      if (e.key === 'Escape' && riModal.style.display === 'block') riClose();\n    });\n  })();\n</script>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "upload_your_design_ARBWNB": {
+      "type": "upload-your-design",
+      "blocks": {
+        "col_Rt3cBr": {
+          "type": "col",
+          "settings": {
+            "image": "shopify://shop_images/How_to_remove_Vastu_dosh_from_home_without_making_structural_changes.jpg",
+            "text1": "",
+            "text2": "Bring Your Design to Life",
+            "button": "Submit Design",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "col_Rt3cBr"
+      ],
+      "name": "Upload Your Design",
+      "settings": {
+        "title": "Upload Your Dream Design",
+        "subtitle": ""
+      }
+    },
+    "1755841721ca716fda": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_78a8e97_z4HHeF": {
+          "type": "ai_gen_block_78a8e97",
+          "settings": {
+            "heading_text": "Why Share Your Design With Us ?",
+            "heading_tag": "h2",
+            "font_size": 46,
+            "mobile_font_size": 26,
+            "font_weight": "500",
+            "line_height": 1.2,
+            "letter_spacing": 0,
+            "text_alignment": "center",
+            "margin_top": 0,
+            "margin_bottom": 20,
+            "text_color": "#121212"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_78a8e97_z4HHeF"
+      ],
+      "settings": {}
+    },
+    "slideshow_C7m6iY": {
+      "type": "slideshow",
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "image_with_text_JAfUba": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_kDX3Jp": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_GGjaAP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>By sharing your designs, you help us understand what you love, shape our collection, and build a brand just made for you, additionally you get your dream design with zero customization charges. <br/>Be the one!<br/><br/></p>",
+            "text_style": "body"
+          }
+        },
+        "button_yiY8EH": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_kDX3Jp",
+        "text_GGjaAP",
+        "button_yiY8EH"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/mumbai_-_studio.jpg",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "overlap",
+        "section_color_scheme": "",
+        "color_scheme": "inverse",
+        "image_behavior": "zoom-in",
+        "mobile_content_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 8
+      }
+    }
+  },
+  "order": [
+    "main",
+    "170410171985c91777",
+    "image_banner_gYGxN8",
+    "image_banner_qtp9TG",
+    "image_banner_xfJaTW",
+    "fingerprint_steps_NGJUTc",
+    "custom_liquid_a6eHpj",
+    "upload_your_design_ARBWNB",
+    "1755841721ca716fda",
+    "slideshow_C7m6iY",
+    "image_with_text_JAfUba"
+  ]
+}
