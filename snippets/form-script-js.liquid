@@ -177,11 +177,11 @@
           return { title, materialName };
         })
         .forEach((selection, index) => {
-          let metalTitle = selection.title.toLowerCase();
-          let metalName = selection.materialName;
+          const displayTitle = selection.title; // keep original casing
+const metalName = selection.materialName;
           personalSelectionHtml += `
                 <div class="final-item">
-                    <div class="final-item-label">${metalTitle}</div>
+                    <div class="final-item-label">${displayTitle}</div>
                     <div class="final-item-value" id="final-metal-tone-${index}">${metalName}</div>
                 </div>
                 `;
