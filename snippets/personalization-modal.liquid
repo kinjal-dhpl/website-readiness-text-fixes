@@ -1,0 +1,300 @@
+<!-- Personalization Modal -->
+<div id="personalization-modal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Personalize Your Ring</h3>
+            <button class="modal-close" data-action="close-modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <path d="M11.7 26.75L18 20.45L24.3 26.75L26.75 24.3L20.45 18L26.75 11.7L24.3 9.25L18 15.55L11.7 9.25L9.25 11.7L15.55 18L9.25 24.3L11.7 26.75ZM18 35.5C15.5792 35.5 13.3042 35.0406 11.175 34.1219C9.04583 33.2031 7.19375 31.9563 5.61875 30.3813C4.04375 28.8063 2.79688 26.9542 1.87813 24.825C0.959375 22.6958 0.5 20.4208 0.5 18C0.5 15.5792 0.959375 13.3042 1.87813 11.175C2.79688 9.04583 4.04375 7.19375 5.61875 5.61875C7.19375 4.04375 9.04583 2.79688 11.175 1.87813C13.3042 0.959375 15.5792 0.5 18 0.5C20.4208 0.5 22.6958 0.959375 24.825 1.87813C26.9542 2.79688 28.8063 4.04375 30.3813 5.61875C31.9563 7.19375 33.2031 9.04583 34.1219 11.175C35.0406 13.3042 35.5 15.5792 35.5 18C35.5 20.4208 35.0406 22.6958 34.1219 24.825C33.2031 26.9542 31.9563 28.8063 30.3813 30.3813C28.8063 31.9563 26.9542 33.2031 24.825 34.1219C22.6958 35.0406 20.4208 35.5 18 35.5Z" fill="#B5B5B5"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="modal-body">
+            {% render 'canvas-view-html' , enable_action_btn: true %}
+        </div>
+        <div class="personalization-loader-overlay" id="personalization-loader-overlay">
+        <div class="personalization-loader-container">
+            <div class="personalization-spinner" style="display: block;"></div>
+            <p class="personalization-loader-message">Personalising your ring…</p>
+            <p class="personalization-loader-subtext">Please wait while we capture your design preview.</p>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div id="personalization-warning-modal" class="warning-modal-overlay">
+    <div class="warning-modal-content">
+        <div class="warning-modal-header">
+            <h3 class="warning-modal-title" id="warning-modal-title">Warning</h3>
+        </div>
+        <div class="warning-modal-body">
+            <p class="warning-modal-message" id="warning-modal-message"></p>
+        </div>
+        <div class="warning-modal-footer">
+            <button class="warning-modal-ok-btn" id="warning-modal-ok-btn">OK</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.warning-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10300;
+}
+
+.warning-modal-overlay.show {
+    display: flex;
+}
+
+.warning-modal-content {
+    background: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.warning-modal-header {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.warning-modal-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    font-family: Oregon LDO Medium, serif
+}
+
+.warning-modal-body {
+    padding: 20px 24px;
+}
+
+.warning-modal-message {
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+}
+
+.warning-modal-footer {
+    padding: 16px 24px 20px;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #eee;
+}
+
+.warning-modal-ok-btn {
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.warning-modal-ok-btn:hover {
+    background: #333;
+}
+
+.warning-modal-ok-btn:active {
+    background: #1a1a1a;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('personalization-modal');
+    const closeButtons = document.querySelectorAll('[data-action="close-modal"]');
+    const saveButton = document.querySelector('[data-action="save-personalization"]');
+    // personalized radio buttons
+    const selectedNoPersonalization = document.querySelector("#no-personalization-radio");
+    const selectedPersonalization = document.querySelector("#personalization-radio");
+    
+    // Handle modal close
+    closeButtons.forEach(button => {
+        button.addEventListener('click', x=>{
+            const personalizedSummaryContainer = document.getElementById('personalization-summary');
+            // personalized radio buttons
+            const selectedNoPersonalization = document.querySelector("#no-personalization-radio");
+            const selectedPersonalization = document.querySelector("#personalization-radio");
+    
+            if( personalizedSummaryContainer && personalizedSummaryContainer.classList.contains('hidden') ){
+                selectedPersonalization.checked = false;
+                console.log('HEY CLOSINg, remove selection');
+            }
+            closeModal();
+        });
+    });
+    
+    // Keyboard support
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+    
+    // Global functions for modal control
+    window.openPersonalizationModal = function() {
+        const selectedVariant = document.querySelector('.variant-box.selected');
+        if (
+            selectedVariant &&
+            selectedVariant.parentElement.getAttribute('data-option1')?.toLowerCase().includes('platinum')
+        ) {
+            Array.from(document.querySelector('#mconfigurator').querySelectorAll('.customContextGrid'))
+                .filter(
+                    (x) =>
+                        ['Metal 01', 'Metal 02', 'Metal 03'].includes(x.getAttribute('layer-name')) &&
+                        x.getAttribute('config-type') === 'color'
+                )
+                .forEach((x) => {
+                    const options = Array.from(x.querySelectorAll('.customContextGridItems'));
+                    let i = 1;
+                    options.forEach((option) => {
+                        i++;
+                        if (option.getAttribute('mat-name') === 'white-gold') {
+                            option.classList.remove('hidden');
+                        } else {
+                            option.classList.add('hidden');
+                        }
+                        option.classList.remove('material-option-active');
+                    });
+                    // If only one visible option remains, auto-click it to apply.
+                    const visible = options.filter((o) => !o.classList.contains('hidden'));
+                    if (visible.length === 1) {
+                        visible[0].click();
+                    }
+                });
+        } else {
+            // For other variants: make all options visible but DO NOT preselect
+            // when there are multiple choices. If a group naturally only has a
+            // single option, auto-click it so it's selected.
+            Array.from(document.querySelector('#mconfigurator').querySelectorAll('.customContextGrid'))
+                .filter(
+                    (x) =>
+                        ['Metal 01', 'Metal 02', 'Metal 03'].includes(x.getAttribute('layer-name')) &&
+                        x.getAttribute('config-type') === 'color'
+                )
+                .forEach((x) => {
+                    const options = Array.from(x.querySelectorAll('.customContextGridItems'));
+                    options.forEach((option) => {
+                        option.classList.remove('hidden');
+                        option.classList.remove('material-option-active');
+                    });
+
+                    const visible = options.filter((o) => !o.classList.contains('hidden'));
+                    if (visible.length === 1) {
+                        visible[0].click();
+                    }
+                });
+        }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        if(window.innerWidth > 786) {
+            const container = document.querySelector('.canvas-3d-container');
+            const canvas = document.querySelector('#main-canvas');
+            const buttons = document.querySelector('.canvas-action-btns');
+            const mconfig = document.querySelector('#mconfigurator');
+            
+            // Get sizes using getBoundingClientRect()
+            const { height: totalHeight, width: totalWidth } = container.getBoundingClientRect();
+            const { width: canvasWidth } = canvas.getBoundingClientRect();
+            const { height: buttonHeight } = buttons.getBoundingClientRect();
+            
+            // Apply new sizes
+            mconfig.style.height = (totalHeight - buttonHeight) - 30 + 'px';
+            mconfig.style.width = (totalWidth - canvasWidth) - 20 + 'px';
+        }
+    };
+    
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+    
+    function savePersonalization() {
+        const selections = {};
+        console.log('Personalization saved:', selections);
+    
+        // Close modal after saving
+        closeModal();
+        
+        // Show personalization summary
+        if (window.showPersonalizationSummary) {
+            window.showPersonalizationSummary(selections);
+        }
+        
+        // Add your logic here for processing the personalization data
+        // For example, you might want to update the product configuration
+    }
+
+    window.showPersonalizationWarning = function(title, message) {
+        const warningModal = document.getElementById('personalization-warning-modal');
+        const titleEl = document.getElementById('warning-modal-title');
+        const messageEl = document.getElementById('warning-modal-message');
+        const okBtn = document.getElementById('warning-modal-ok-btn');
+        
+        if (warningModal && titleEl && messageEl) {
+            titleEl.textContent = title;
+            messageEl.textContent = message;
+            warningModal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+            
+            okBtn.onclick = function() {
+                warningModal.classList.remove('show');
+                document.body.style.overflow = '';
+            };
+            
+            warningModal.onclick = function(e) {
+                if (e.target === warningModal) {
+                    warningModal.classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            };
+
+            const escapeHandler = function(e) {
+                if (e.key === 'Escape' && warningModal.classList.contains('show')) {
+                    warningModal.classList.remove('show');
+                    document.body.style.overflow = '';
+                    document.removeEventListener('keydown', escapeHandler);
+                }
+            };
+            document.addEventListener('keydown', escapeHandler);
+        }
+    };
+
+    window.hidePersonalizationWarning = function() {
+        const warningModal = document.getElementById('personalization-warning-modal');
+        if (warningModal) {
+            warningModal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    };
+});
+</script>
