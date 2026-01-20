@@ -1176,3 +1176,52 @@ p.faq-panel, .faq-panel p {
     padding: 0 40px;          /* Add left & right padding */
     box-sizing: border-box;   /* Ensure padding doesn’t break width */
 }
+  /* --- Policy cards: preserve width and allow small left shift --- */
+
+/* container for all three cards */
+.policies-holder {
+  display: flex;
+  
+  gap: 2rem;                       /* equal spacing between cards */
+  flex-wrap: nowrap;               /* keep all three in one row on desktop */
+  max-width: 1200px;               /* match PDP width */
+  margin: 2rem auto;               /* vertical rhythm + centered section */
+  padding-left: 0;                 /* default centre starts at container edge */
+  position: relative;
+}
+
+/* move the entire trio slightly left — adjust px value to what looks right */
+.policies-holder {
+  left: -9px;                     /* shifts whole block 20 px left */
+}
+
+/* make sure each box keeps its original width ratio */
+.policies-holder .policies-container {
+  flex: 0 0 32%;                   /* about 3 × 32% = 96% same as your live site */
+}
+
+/* keep the internal card styling untouched */
+.policy-card {
+  text-align: left;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/* stack cards on small screens */
+@media (max-width: 768px) {
+  .policies-holder {
+    flex-direction: column;
+    gap: 16px;
+    left: 0;                       /* cancel horizontal shift */
+  }
+  .policies-holder .policies-container {
+    flex: 1 1 100%;
+  }
+}
+/* Shift the entire Progress Tracker section left */
+.progress-tracker-section {
+  position: relative;
+  left: -50px !important;   /* adjust the number until it lines up with policy cards */
+}
